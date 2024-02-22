@@ -1,0 +1,22 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          Contact Creator
+      </div>
+      <div slot="actions">
+    
+      </div>
+      <div slot="footer">
+    
+      </div>
+      <div>
+        <!-- Card Body  -->
+        <lightning-record-form
+          object-api-name={objectApiName}
+          record-id={recordId}
+          fields={fields}
+          onsuccess={handleSuccess}
+        ></lightning-record-form>
+      </div>
+    </lightning-card>
+</template>

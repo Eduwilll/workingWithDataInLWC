@@ -1,0 +1,50 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          callApeximperative
+      </div>
+      <div slot="actions">
+    
+      </div>
+      <div slot="footer">
+    
+      </div>
+      <div>
+        <!-- Card Body  -->
+        <p>Pega todos os records nacidos depois da data</p>
+        <lightning-input 
+        type="date" 
+        name="input1" 
+        label="Enter a date" 
+        value={minBirthDate}
+        onchange={handleChange}
+    ></lightning-input>
+
+    <lightning-button 
+        variant="brand"
+        label="Get Record" 
+        title="Looks like a link" 
+        type="button"
+        onclick={handleButtonClick} 
+        icon-name="utility:activity"
+        icon-position="left"
+    ></lightning-button>
+
+    <!-- Display contacts -->
+    <template if:true={contacts}>
+        <ul>
+            <template for:each={contacts} for:item="contact">
+                <li key={contact.Id}>{contact.Name}, Birthdate: {contact.Birthdate}</li>
+            </template>
+        </ul>
+    </template>
+    <template if:false={contacts}>
+        <p>No data to show</p>
+    </template>
+      </div>
+      <template if:true={errors}>
+        <p>{errors}</p>
+    </template>
+    </lightning-card>
+
+</template>

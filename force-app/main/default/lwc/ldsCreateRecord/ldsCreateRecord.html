@@ -1,0 +1,33 @@
+<template>
+
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          ldsCreateRecord
+      </div>
+      <div slot="actions">
+    
+      </div>
+      
+      <div class="slds-p-horizontal_small">
+        <!-- Card Body  -->
+          <lightning-input 
+            type="text"
+            label="Account name"
+            onchange={handleOnChange}
+            name="acc"
+          ></lightning-input>
+
+      </div>
+      <div slot="footer">
+        <div class="slds-p-horizontal_small">
+          <lightning-button 
+          variant="neutro"
+          label="criar Account" 
+          onclick={handleButtonClick} 
+        ></lightning-button>
+      </div>
+      </div>
+    </lightning-card>
+
+  </template>
+  

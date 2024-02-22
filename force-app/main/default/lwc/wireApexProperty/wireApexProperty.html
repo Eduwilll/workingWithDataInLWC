@@ -1,0 +1,22 @@
+<!-- wireApexProperty.html -->
+<template>
+    <lightning-card title="wireApexProperty">
+        <div class="slds-m-around_medium">
+            <!-- Check if the contacts data is available -->
+            <template if:true={contacts.data}>
+                <ul>
+                    <!-- Iterate over the contacts and display relevant information -->
+                    <template for:each={contacts.data} for:item="contact">
+                        <li key={contact.Id}>
+                            {contact.Name}, {contact.Birthdate}
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <!-- Display an error message if there's an issue with the wire service -->
+            <template if:true={errors}>
+                <p>{errors}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
